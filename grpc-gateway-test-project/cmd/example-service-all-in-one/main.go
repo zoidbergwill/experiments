@@ -3,7 +3,7 @@ package main
 import (
 	"sync"
 
-	exampleservice "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example_service"
+	exampleservice "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example"
 )
 
 func main() {

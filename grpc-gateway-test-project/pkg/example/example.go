@@ -1,4 +1,4 @@
-package exampleservice
+package example
 
 import (
 	"context" // Use "golang.org/x/net/context" for Golang version <= 1.6
@@ -13,8 +13,8 @@ import (
 	"log"
 	"net"
 
-	gw "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example_service/proto"
-	pb "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example_service/proto"
+	gw "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example/proto"
+	pb "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/example/proto"
 )
 
 var (
