@@ -2,6 +2,12 @@
 
 https://github.com/grpc-ecosystem/grpc-gateway
 
+https://opencensus.io/quickstart/go/tracing/
+https://opencensus.io/quickstart/go/metrics/
+https://opencensus.io/zpages/go/
+
+https://github.com/census-instrumentation/opencensus-go/blob/master/examples/grpc/helloworld_server/main.go
+
 ## Quickstart
 
 ### Star Wars Example
@@ -49,3 +55,4 @@ In the second, you should get:
 2019/08/29 13:45:18 Received: potato
 ```
 https://grpc.io/docs/guides/auth
+https://github.com/improbable-eng/grpc-web/tree/master/go/grpcweb

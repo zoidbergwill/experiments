@@ -20,8 +20,8 @@ import (
 var (
 	// command-line options:
 	// gRPC server endpoint
-	grpcServerEndpoint        = flag.String("grpc-server-endpoint", "localhost:9090", "gRPC server endpoint")
-	grpcGatewayServerEndpoint = flag.String("grpc-gateway-server-endpoint", "localhost:9090", "gRPC server endpoint")
+	grpcServerEndpoint        = flag.String("grpc-server-endpoint", "localhost:8080", "gRPC server endpoint")
+	grpcGatewayServerEndpoint = flag.String("grpc-gateway-server-endpoint", "localhost:8081", "gRPC server endpoint")
 )
 
 func actuallyRunGRPCServer() error {

@@ -10,6 +10,9 @@ import (
 	empty "github.com/golang/protobuf/ptypes/empty"
 	proto "github.com/zoidbergwill/experiments/grpc-gateway-test-project/pkg/starwars/proto"
 	grpc "google.golang.org/grpc"
+
+	"go.opencensus.io/plugin/ochttp"
+	"go.opencensus.io/stats/view"
 )
 
 var (
@@ -17,6 +20,29 @@ var (
 	// gRPC server endpoint
 	grpcServerEndpoint = flag.String("grpc-server-endpoint", "localhost:8081", "gRPC server endpoint")
 )
+
+func httpCall() {
+	if err := view.Register(
+		// Register a few default views.
+		ochttp.ClientSentBytesDistribution,
+		ochttp.ClientReceivedBytesDistribution,
+		ochttp.ClientRoundtripLatencyDistribution,
+		// Register a custom view.
+		&view.View{
+			Name:        "httpclient_latency_by_path",
+			TagKeys:     []tag.Key{ochttp.KeyClientPath},
+			Measure:     ochttp.ClientRoundtripLatency,
+			Aggregation: ochttp.DefaultLatencyDistribution,
+		},
+	); err != nil {
+		log.Fatal(err)
+	}
+
+	client := &http.Client{
+		Transport: &ochttp.Transport{},
+	}
+
+}
 
 func main() {
 	flag.Parse()
